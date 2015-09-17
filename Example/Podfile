@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'SwiftHistorian_Example', :exclusive => true do
+  pod "SwiftHistorian", :path => "../"
+end
+
+target 'SwiftHistorian_Tests', :exclusive => true do
+  pod "SwiftHistorian", :path => "../"
+
+  pod 'Quick', '~> 0.3.1'
+  pod 'Nimble'
+end
