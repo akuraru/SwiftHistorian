@@ -1,0 +1,25 @@
+PODS:
+  - Nimble (1.0.0)
+  - Quick (0.3.1)
+  - SwiftHistorian (0.1.0)
+
+DEPENDENCIES:
+  - Nimble
+  - Quick (~> 0.3.1)
+  - SwiftHistorian (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftHistorian:
+    :git: ../
+
+CHECKOUT OPTIONS:
+  SwiftHistorian:
+    :commit: 3c654d9f7741edabcb8fc754284cd47c4e7607e8
+    :git: ../
+
+SPEC CHECKSUMS:
+  Nimble: 8bee528e5fcc403653076545db562d2b5db7bb87
+  Quick: 824572d3d198d51e52cf4aa722cebf7e59952a35
+  SwiftHistorian: 2a67a3d0300f455936a2996c3c705c60ff6f0d12
+
+COCOAPODS: 0.38.2

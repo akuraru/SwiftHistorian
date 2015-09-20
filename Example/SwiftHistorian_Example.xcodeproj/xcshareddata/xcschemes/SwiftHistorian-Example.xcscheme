@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -17,21 +16,7 @@
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
                BuildableName = "SwiftHistorian_Example.app"
                BlueprintName = "SwiftHistorian_Example"
-               ReferencedContainer = "container:SwiftHistorian.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "SwiftHistorian_Tests.xctest"
-               BlueprintName = "SwiftHistorian_Tests"
-               ReferencedContainer = "container:SwiftHistorian.xcodeproj">
+               ReferencedContainer = "container:SwiftHistorian_Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +34,7 @@
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
                BuildableName = "SwiftHistorian_Tests.xctest"
                BlueprintName = "SwiftHistorian_Tests"
-               ReferencedContainer = "container:SwiftHistorian.xcodeproj">
+               ReferencedContainer = "container:SwiftHistorian_Example.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -59,7 +44,7 @@
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
             BuildableName = "SwiftHistorian_Example.app"
             BlueprintName = "SwiftHistorian_Example"
-            ReferencedContainer = "container:SwiftHistorian.xcodeproj">
+            ReferencedContainer = "container:SwiftHistorian_Example.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -79,7 +64,7 @@
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
             BuildableName = "SwiftHistorian_Example.app"
             BlueprintName = "SwiftHistorian_Example"
-            ReferencedContainer = "container:SwiftHistorian.xcodeproj">
+            ReferencedContainer = "container:SwiftHistorian_Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -91,16 +76,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
             BuildableName = "SwiftHistorian_Example.app"
             BlueprintName = "SwiftHistorian_Example"
-            ReferencedContainer = "container:SwiftHistorian.xcodeproj">
+            ReferencedContainer = "container:SwiftHistorian_Example.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import WebKit
+import SwiftHistorian
 
 class ViewController: UIViewController {
+    var webView: WKWebView!
+    var historian: Historian!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+//        historian = SwiftHistorian()
+//        
+//        webView = WKWebView(frame: CGRectZero)
+//        webView.navigationDelegate = historian
+//        view.addSubview(webView)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
 
 }
-
