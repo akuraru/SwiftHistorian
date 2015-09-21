@@ -12,16 +12,17 @@ import SwiftHistorian
 
 class ViewController: UIViewController {
     var webView: WKWebView!
-    var historian: Historian!
+    var historian: SwiftHistorian!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        historian = SwiftHistorian()
-//        
-//        webView = WKWebView(frame: CGRectZero)
-//        webView.navigationDelegate = historian
-//        view.addSubview(webView)
+        historian = SwiftHistorian()
+        
+        webView = WKWebView(frame: self.view.bounds)
+        webView.navigationDelegate = historian
+        view.addSubview(webView)
+        webView.loadRequest(NSURLRequest(URL: NSURL(string: "https://github.com/")!))
+        
+        print(historian.loadHistorian())
     }
-    
-
 }

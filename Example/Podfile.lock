@@ -1,25 +1,44 @@
 PODS:
   - Nimble (1.0.0)
   - Quick (0.3.1)
-  - SwiftHistorian (0.1.0)
+  - Realm (0.95.0):
+    - Realm/Headers (= 0.95.0)
+  - Realm/Headers (0.95.0)
+  - RealmSwift (0.95.0):
+    - Realm (= 0.95.0)
+  - SwiftHistorian (0.1.0):
+    - RealmSwift
 
 DEPENDENCIES:
   - Nimble
   - Quick (~> 0.3.1)
+  - Realm (from `https://github.com/realm/realm-cocoa.git`, branch `swift-2.0`)
+  - RealmSwift (from `https://github.com/realm/realm-cocoa.git`, branch `swift-2.0`)
   - SwiftHistorian (from `../`)
 
 EXTERNAL SOURCES:
+  Realm:
+    :branch: swift-2.0
+    :git: https://github.com/realm/realm-cocoa.git
+  RealmSwift:
+    :branch: swift-2.0
+    :git: https://github.com/realm/realm-cocoa.git
   SwiftHistorian:
-    :git: ../
+    :path: ../
 
 CHECKOUT OPTIONS:
-  SwiftHistorian:
-    :commit: 3c654d9f7741edabcb8fc754284cd47c4e7607e8
-    :git: ../
+  Realm:
+    :commit: e4397aa856088322c41b9b1c6c76fc30f1938c55
+    :git: https://github.com/realm/realm-cocoa.git
+  RealmSwift:
+    :commit: e4397aa856088322c41b9b1c6c76fc30f1938c55
+    :git: https://github.com/realm/realm-cocoa.git
 
 SPEC CHECKSUMS:
   Nimble: 8bee528e5fcc403653076545db562d2b5db7bb87
   Quick: 824572d3d198d51e52cf4aa722cebf7e59952a35
-  SwiftHistorian: 2a67a3d0300f455936a2996c3c705c60ff6f0d12
+  Realm: 1c28007bd496af94dba8c76d50719164e706a521
+  RealmSwift: 9864524dd99c2cb7b4643c29513ef8447fe63724
+  SwiftHistorian: a6cbbea6ce3092a80c6b6c28a9c39568a808c78c
 
 COCOAPODS: 0.38.2

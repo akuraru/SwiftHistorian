@@ -24,5 +24,5 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes/**/*'
   s.frameworks = 'UIKit', 'WebKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'RealmSwift'
 end
