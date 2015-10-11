@@ -3,30 +3,51 @@ import WebKit
 import RealmSwift
 
 public class Historian: Object {
-    dynamic var name = ""
-    
+    dynamic var URL = ""
+    dynamic var host = ""
+    dynamic var title = ""
+    dynamic var timeStamp: Int = 0
+    override public class func primaryKey() -> String? {
+        return "URL"
+    }
+    override public static func indexedProperties() -> [String] {
+        return ["timeStamp"]
+    }
 }
 
 public class SwiftHistorian: NSObject, WKNavigationDelegate {
-    let realm: Realm
     public var delegate: WKNavigationDelegate?
     
     override public init() {
-        let path = NSSearchPathForDirectoriesInDomains(.LibraryDirectory, .UserDomainMask, true)[0] as String
-        self.realm = (try? Realm(path: "\(path)/SwiftHistorian.realm"))!
         super.init()
+    }
+    func realm() -> Realm {
+        let path = NSSearchPathForDirectoriesInDomains(.LibraryDirectory, .UserDomainMask, true)[0] as String
+        return (try? Realm(path: "\(path)/SwiftHistorian.realm"))!
     }
     
     public func loadHistorian() -> Results<Historian> {
-        return self.realm.objects(Historian)
+        return realm().objects(Historian)
     }
     
-    func update(URL: NSURL?) {
+    func update(URL: NSURL?, title: String?) {
         if let u = URL {
-            try! self.realm.write({ () -> Void in
-                let historian = Historian()
-                historian.name = u.absoluteString
-                self.realm.add(historian)
+            try! realm().write({[unowned self] in
+                let realm = self.realm()
+                let result = realm.objects(Historian).filter(NSPredicate(format: "URL == %@", u.absoluteString))
+                if let historian = result.first {
+                    historian.host = u.host ?? ""
+                    historian.title = title ?? ""
+                    historian.timeStamp = Int(NSDate().timeIntervalSince1970 * 1000)
+                    realm.add(historian)
+                } else {
+                    let historian = Historian()
+                    historian.URL = u.absoluteString
+                    historian.host = u.host ?? ""
+                    historian.title = title ?? ""
+                    historian.timeStamp = Int(NSDate().timeIntervalSince1970 * 1000)
+                    realm.add(historian)
+                }
             })
         }
     }
@@ -74,7 +95,7 @@ public class SwiftHistorian: NSObject, WKNavigationDelegate {
     }
     public func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
         print("webView:didFinishNavigation:")
-        update(webView.URL)
+        update(webView.URL, title: webView.title)
         
         if let d = delegate where d.respondsToSelector("webView:didFinishNavigation:") {
             d.webView!(webView, didFinishNavigation: navigation)
